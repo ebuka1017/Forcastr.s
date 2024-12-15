@@ -143,7 +143,7 @@ function copyReferralLink() {
 }
 
 function generateReferralLink(userId) {
-    const baseUrl = "https://t.me/InfinityWeb3CryptoBot/app?startapp=";
+    const baseUrl = "http://t.me/Snap_tokenBot/forcastr/app?startapp=";
     return baseUrl + userId;
 }
 
