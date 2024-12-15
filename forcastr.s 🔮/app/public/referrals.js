@@ -30,7 +30,7 @@ async function fetchUserData(userId) {
 }
 
 function generateReferralLink(userId) {
-    const baseUrl = "https://t.me/InfinityWeb3CryptoBot/app?startapp=";
+    const baseUrl = "http://t.me/Snap_tokenBot/forcastr/app?startapp=";
     return baseUrl + userId;
 }
 
@@ -52,8 +52,8 @@ function renderReferrals() {
     const contentArea = document.getElementById('contentArea');
     const referralLink = generateReferralLink(tg.initDataUnsafe.user.id);
     contentArea.innerHTML = `
-        <h2>Referrals</h2>
-        <p>Invite your friends using the link below and earn points for each referral!</p>
+        <h2>Party</h2>
+        <p>Invite your frens using the link below and earn points for each referral!</p>
         <input type="text" value="${referralLink}" id="referralLink" readonly>
         <button onclick="copyReferralLink()">Copy Link</button>
         <p>Total Referrals: ${userData.referralCount}</p>
