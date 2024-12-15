@@ -6,7 +6,7 @@ const token = '';
 const bot = new TelegramBot(token, { polling: true });
 const uri = "";
 const client = new MongoClient(uri);
-const webAppBaseUrl = 'https://app.likhon.xyz/';
+const webAppBaseUrl = 'https://forcastr-s.vercel.app/';
 
 async function connectToMongo() {
   try {
@@ -51,9 +51,9 @@ bot.onText(/\/start/, async (msg) => {
       user = { userId, username, points: 0, completedTasks: [], referredBy: null, referralCode: userId.toString(), lastPointUpdate: new Date(), joinDate: new Date() };
       await userCollection.insertOne(user);
     }
-    const referralLink = `https://t.me/InfinityWeb3CryptoBot?start=${user.referralCode}`;
+    const referralLink = `http://t.me/Snap_tokenBot/forcastr/app?start=${user.referralCode}`;
     const webAppUrl = generateWebAppUrl(msg.from);
-    const message = `🚀 Welcome to Infinity Web3 Crypto Bot, ${username}!\n\n📊 Points: ${user.points}\n💰 Earn 100 points per referral!\n✨ Start your crypto journey now!`;
+    const message = `🚀 Welcome to forcastr, ${username}!\n\n📊 Points: ${user.points}\n💰 Earn 100 points per referral!\n✨ Start your crypto journey now!`;
     const keyboard = {
       keyboard: [
         [{ text: "🌐 Open Web App", web_app: { url: webAppUrl } }],
